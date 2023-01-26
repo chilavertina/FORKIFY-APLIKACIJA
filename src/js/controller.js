@@ -3,6 +3,7 @@ import recipeView from './views/recipeView.js';
 
 import 'core-js/stable'; // polyfilling sve ostalo
 import 'regenerator-runtime/runtime'; // polyfilling async/await
+import { async } from 'regenerator-runtime';
 
 const recipeContainer = document.querySelector('.recipe');
 
@@ -24,6 +25,16 @@ const controlRecipes = async function () {
     recipeView.renderError();
   }
 };
+
+const controlSearchResults = async function () {
+  try {
+    await model.loadSearchResults('pizza');
+    console.log(model.state.search.results);
+  } catch (err) {
+    console.log(err);
+  }
+};
+controlSearchResults();
 
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
