@@ -624,7 +624,7 @@ const init = function() {
     (0, _recipeViewJsDefault.default).addHandlerAddBookmark(controlAddBookmark);
     (0, _searchViewJsDefault.default).addHandlerSearch(controlSearchResults);
     (0, _paginationViewJsDefault.default).addHandlerClick(controlPagination);
-    (0, _addRecipeViewJsDefault.default)._addHandlerUpload(controlAddRecipe);
+    (0, _addRecipeViewJsDefault.default).addHandlerUpload(controlAddRecipe);
 };
 init();
 
